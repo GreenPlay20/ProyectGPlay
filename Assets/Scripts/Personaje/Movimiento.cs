@@ -34,6 +34,8 @@ public class Movimiento : MonoBehaviour
         inputVector=inputVector.normalized;
         Vector3 pos = new Vector3(inputVector.x, 0, inputVector.y);
         transform.position += pos * Time.deltaTime * velMovimiento;
-        Debug.Log(inputVector);
+        float velocidadRot = 5f;
+        transform.forward = Vector3.Slerp(transform.forward, pos, Time.deltaTime*velocidadRot);
+        
     }
 }
