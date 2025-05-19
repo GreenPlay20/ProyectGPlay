@@ -2,14 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
+
 public class Movimiento : MonoBehaviour
 {
 
     // Start is called before the first frame update
+    [Header("Movimiento horizontal")]
+    [Tooltip("velocidad de movimiento")]
     [SerializeField] private float velMovimiento = 7f;
+
+    [Header("Movimiento vertical")]
+    [Tooltip("velocidad de salto")]
+    [SerializeField] private float jumpSpeed = 20.0f;
+    [SerializeField] private float gravity= -9.8f;
+    [SerializeField] private float terminalVelocity= -10.0f;
+    [SerializeField] private float minFall = -1.5f;
+    [Tooltip("Velocidad vertical")]
+    [SerializeField] private float vertSpeed;
+
+
+    private CharacterController charController;
     void Start()
     {
-        
+        charController = GetComponent<CharacterController>();
+        vertSpeed = minFall;
     }
 
     // Update is called once per frame
@@ -32,10 +49,33 @@ public class Movimiento : MonoBehaviour
             inputVector.x = +1;
         }
         inputVector=inputVector.normalized;
-        Vector3 pos = new Vector3(inputVector.x, 0, inputVector.y);
-        transform.position += pos * Time.deltaTime * velMovimiento;
+         
+        if(charController.isGrounded)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                vertSpeed = jumpSpeed;
+            }
+            else
+            {
+                vertSpeed = minFall;
+            }
+        }
+        else
+        {
+            vertSpeed += gravity * 5 * Time.deltaTime;
+            if (vertSpeed < terminalVelocity)
+            {
+                vertSpeed = terminalVelocity;
+            }
+        }
+
+        Vector3 pos = new Vector3(inputVector.x*velMovimiento, vertSpeed, inputVector.y * velMovimiento);
+        //transform.position += pos * Time.deltaTime * velMovimiento;
+        charController.Move(pos * Time.deltaTime );
         float velocidadRot = 5f;
-        transform.forward = Vector3.Slerp(transform.forward, pos, Time.deltaTime*velocidadRot);
-        
+        Vector3 rot = new Vector3(inputVector.x, 0, inputVector.y);
+        transform.forward = Vector3.Slerp(transform.forward, rot , Time.deltaTime * velocidadRot);
+
     }
 }
