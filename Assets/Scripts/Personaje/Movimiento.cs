@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -21,19 +22,24 @@ public class Movimiento : MonoBehaviour
     [Tooltip("Velocidad vertical")]
     [SerializeField] private float vertSpeed;
 
+    [Header("Entrada")]
+    [SerializeField] private PlayerInput InputAct;
+    [SerializeField] private Vector2 inputVector = new Vector2(0, 0);
 
     private CharacterController charController;
+   
+   
     void Start()
     {
         charController = GetComponent<CharacterController>();
         vertSpeed = minFall;
+        InputAct = GetComponent<PlayerInput>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 inputVector = new Vector2(0,0);
-        if (Input.GetKey(KeyCode.W)) {
+        /*if (Input.GetKey(KeyCode.W)) {
             inputVector.y = +1;
         }
         if (Input.GetKey(KeyCode.S))
@@ -48,11 +54,14 @@ public class Movimiento : MonoBehaviour
         {
             inputVector.x = +1;
         }
+        */
+        inputVector = InputAct.actions["Moverse"].ReadValue<Vector2>();
         inputVector=inputVector.normalized;
          
         if(charController.isGrounded)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            //if(Input.GetKeyDown(KeyCode.Space))
+            if (InputAct.actions["Saltar"].WasPressedThisFrame())
             {
                 vertSpeed = jumpSpeed;
             }
