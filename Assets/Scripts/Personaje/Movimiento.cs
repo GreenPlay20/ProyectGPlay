@@ -85,6 +85,10 @@ public class Movimiento : MonoBehaviour
         float velocidadRot = 5f;
         Vector3 rot = new Vector3(inputVector.x, 0, inputVector.y);
         transform.forward = Vector3.Slerp(transform.forward, rot , Time.deltaTime * velocidadRot);
-
+        //para pausar
+        if(InputAct.actions["EstaPausado"].WasPressedThisFrame())
+        {
+            MenuOpciones.SiPausar();
+        }
     }
 }
