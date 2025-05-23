@@ -7,8 +7,10 @@ public class MenuOpciones
     [SerializeField] private static bool isPaused = false;
 
 
-   public static void Awake()
+   
+    public static void start()
     {
+        isPaused = false;
         Time.timeScale = 1f;
     }
    public static void SiPausar()
@@ -23,10 +25,12 @@ public class MenuOpciones
             Time.timeScale = 0f;
             isPaused = true;
         }
+        Debug.Log("is paused = " + isPaused);
     }
     public static void SalirInicio()
     {
         LoadScene.Cargar(LoadScene.Scene.Inicio);
         Time.timeScale = 1f;
+        isPaused = false;
     }
 }

@@ -15,6 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadStage.unity
     guid: 77c8d8697f4d3a648b6dc9939a3b7009
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2d7e2565f198ccd4596462f8ea45c33f,
+      type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 981649f1a2827e845b84014d4a49d561, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: c14991b19e7a0704bba54c1393ce70d8,
