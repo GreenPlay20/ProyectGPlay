@@ -79,11 +79,11 @@ public class Movimiento : MonoBehaviour
             }
         }
 
-        Vector3 pos = new Vector3(inputVector.x*velMovimiento, vertSpeed, inputVector.y * velMovimiento);
+        Vector3 pos = new Vector3(inputVector.y*velMovimiento*-1, vertSpeed, inputVector.x * velMovimiento);
         //transform.position += pos * Time.deltaTime * velMovimiento;
         charController.Move(pos * Time.deltaTime );
         float velocidadRot = 5f;
-        Vector3 rot = new Vector3(inputVector.x, 0, inputVector.y);
+        Vector3 rot = new Vector3(inputVector.y*-1, 0, inputVector.x);
         transform.forward = Vector3.Slerp(transform.forward, rot , Time.deltaTime * velocidadRot);
         //para pausar
         if(InputAct.actions["EstaPausado"].WasPressedThisFrame())
