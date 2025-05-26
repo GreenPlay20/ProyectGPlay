@@ -9,6 +9,7 @@ public class OpcioneCallback : MonoBehaviour
     [SerializeField] private GameObject Interfaz;
     [SerializeField] private GameObject Opciones;
     [SerializeField] private Button Continuar;
+    [SerializeField] private Button Reiniciar;
     [SerializeField] private Button Salir;
     [SerializeField] private Button BtnOpciones;
     // Start is called before the first frame update
@@ -31,6 +32,12 @@ public class OpcioneCallback : MonoBehaviour
             MenuOpciones.SiPausar();
             Interfaz.SetActive(false);
             Opciones.SetActive(true);
+        });
+        Reiniciar.onClick.AddListener(() =>
+        {
+            MenuOpciones.Recargar();
+            Interfaz.SetActive(true);
+            Opciones.SetActive(false);
         });
     }
    

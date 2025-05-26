@@ -9,7 +9,8 @@ public static class LoadScene {
     {
         Inicio,
         LoadStage,
-        Nivel1
+        Nivel1,
+        Nivel1_Escenario
     }
     private static Scene EscenaCargar;
     public static void Cargar(Scene EscenaA)

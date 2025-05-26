@@ -33,4 +33,10 @@ public class MenuOpciones
         Time.timeScale = 1f;
         isPaused = false;
     }
+    public static void Recargar()
+    {
+        LoadScene.Cargar(LoadScene.Scene.Nivel1_Escenario);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
 }

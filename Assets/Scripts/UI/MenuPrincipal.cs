@@ -13,7 +13,7 @@ public class MenuPrincipal : MonoBehaviour
         Jugar.onClick.AddListener(() =>
         {
             //codigo al hacer click en jugar
-            LoadScene.Cargar(LoadScene.Scene.Nivel1);
+            LoadScene.Cargar(LoadScene.Scene.Nivel1_Escenario);
         }
         );
         Salir.onClick.AddListener(() =>
