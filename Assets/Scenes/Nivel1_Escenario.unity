@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5377358, g: 0.5098344, b: 0.5098344, a: 0.98039216}
+  m_Fog: 1
+  m_FogColor: {r: 0.7075472, g: 0.6574849, b: 0.6574849, a: 0.98039216}
   m_FogMode: 2
   m_FogDensity: 0.002
   m_LinearFogStart: 0
@@ -25,14 +25,14 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.07035421, g: 0.13321224, b: 0.2924528, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: aad3858511db4ba41b1a33d378f3227e, type: 2}
   m_HaloStrength: 0.503
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 1
+  m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
@@ -4411,7 +4411,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190107967}
-  m_LocalRotation: {x: 0.3801236, y: -0.43113363, z: 0.20700437, w: 0.7916938}
+  m_LocalRotation: {x: 0.38128918, y: -0.43082824, z: 0.20763911, w: 0.7911331}
   m_LocalPosition: {x: 15.681519, y: 11.414373, z: -11.152416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24055,7 +24055,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3801236, y: -0.43113363, z: 0.20700437, w: 0.7916938}
+  m_LocalRotation: {x: 0.3812892, y: -0.43082824, z: 0.20763911, w: 0.7911331}
   m_LocalPosition: {x: 15.681519, y: 11.414373, z: -11.152416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28217,11 +28217,11 @@ MonoBehaviour:
   m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
-  m_ScreenY: 0.16
-  m_DeadZoneWidth: 0.29
-  m_DeadZoneHeight: 0.6
+  m_ScreenY: 0.16000003
+  m_DeadZoneWidth: 0.26
+  m_DeadZoneHeight: 0.55
   m_SoftZoneWidth: 0.37
-  m_SoftZoneHeight: 0.72
+  m_SoftZoneHeight: 0.75
   m_BiasX: -0.018
   m_BiasY: -0.003
   m_CenterOnActivate: 1
